@@ -1,0 +1,24 @@
+{
+  "name": "my-weather-dapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy:local": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "request-weather": "node scripts/request-weather.js",
+    "frontend:start": "cd frontend && npm install && npm run dev",
+    "subgraph:codegen": "cd subgraph && npm install && npx graph codegen",
+    "subgraph:deploy": "cd subgraph && npx graph deploy --product hosted-service YOUR_SUBGRAPH_NAME"
+  },
+  "devDependencies": {
+    "@chainlink/contracts": "^1.2.0",
+    "@nomicfoundation/hardhat-ethers": "^3.1.0",
+    "@openzeppelin/contracts": "^4.9.3",
+    "chai": "^4.3.7",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.8.0",
+    "hardhat": "^2.17.0"
+  }
+}

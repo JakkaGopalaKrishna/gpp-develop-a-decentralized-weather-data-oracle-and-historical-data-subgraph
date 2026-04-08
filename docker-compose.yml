@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  hardhat:
+    image: node:18
+    working_dir: /app
+    command: sh -c "npm install && npx hardhat node --hostname 0.0.0.0"
+    ports:
+      - "8545:8545"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development

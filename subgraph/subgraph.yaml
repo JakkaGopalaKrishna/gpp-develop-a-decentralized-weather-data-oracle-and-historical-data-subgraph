@@ -1,0 +1,23 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: WeatherOracle
+    network: sepolia
+    source:
+      address: "{{WEATHER_ORACLE_ADDRESS}}"
+      abi: WeatherOracle
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - WeatherReport
+      abis:
+        - name: WeatherOracle
+          file: ./abis/WeatherOracle.json
+      eventHandlers:
+        - event: WeatherReported(bytes32,string,int256,string,uint256,address)
+          handler: handleWeatherReported
+      file: ./src/mappings/weather-oracle.ts

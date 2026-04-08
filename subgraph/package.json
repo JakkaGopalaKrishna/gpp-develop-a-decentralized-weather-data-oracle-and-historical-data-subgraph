@@ -1,0 +1,16 @@
+{
+  "name": "weather-oracle-subgraph",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --product hosted-service YOUR_SUBGRAPH_NAME"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-ts": "^1.26.0"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.30.0"
+  }
+}
